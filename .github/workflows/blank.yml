@@ -13,14 +13,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Get current date
-      id: builddate
+    - name: Nginx Remove Auth
+      id: nginx-auth
       run: |
          sed -e '10d;11d' nginx/default.conf
          cat  nginx/default.conf
-      shell: bash
-
-    - name: remove NGing Auth 
-      id: nginx-auth-remove
-      run: echo $PATH          
       shell: bash
