@@ -20,6 +20,7 @@ jobs:
          ls ${{ github.workspace }}
          cd nginx
          ls
+         ed -s default.conf <<< $'g/auth_basic "Authenticated Access";/d\nw'
          cat default.conf
       shell: bash
 
