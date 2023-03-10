@@ -16,7 +16,7 @@ jobs:
     - name: Get current date
       id: builddate
       run: |
-         ed -s nginx/default.conf <<< $'10,5d\nw'
+         sed -e '10d;11d' nginx/default.conf
          cat  nginx/default.conf
       shell: bash
 
