@@ -1,15 +1,19 @@
-name: Build and Deploy to STAGE
+name: Build and Deploy to Dev
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - dev
 
 jobs:
   build-deploy:
-    name: Build and Push to STAGE Environment
+    name: Build and Push to Dev Environment
     runs-on: [self-hosted, linux, x64, ec2]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-
+      - name: Get current date
+        id: builddate
+        run: echo "::set-output name=date::$(date +'%m/%d/%Y')"
