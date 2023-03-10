@@ -16,7 +16,6 @@ jobs:
     - name: Nginx Remove Auth
       id: nginx-auth
       run: |
-         ed -s nginx/default.conf <<< $'2,10d\nw'
-          ed -s nginx/default.conf <<< $'2,11d\nw'
+         ed -s nginx/default.conf <<< $'10,11d\nw'
          cat  nginx/default.conf
       shell: bash
