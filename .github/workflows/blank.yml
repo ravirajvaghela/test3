@@ -8,7 +8,7 @@ jobs:
 
   deploy:
     name: Build image
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64, ec2]
 
     steps:
     - name: Get current date
@@ -19,5 +19,5 @@ jobs:
       id: nginx-auth-remove
       run: | 
             pwd 
-            cat .nginx/default.conf
+            cat nginx/default.conf
       shell: bash
