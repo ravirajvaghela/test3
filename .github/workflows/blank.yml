@@ -10,6 +10,13 @@ jobs:
     name: Build image
     runs-on: ubuntu-latest
 
+    steps:
     - name: Get current date
       id: builddate
       run: echo "::set-output name=date::$(date +'%m/%d/%Y')"
+
+    - name: remove NGing Auth 
+      id: nginx-auth-remove
+      run: ed -s .nginx/default.conf <<< $'g/auth_basic "Authenticated Access";/d\nw'
+           pwd 
+           cat .nginx/default.conf
