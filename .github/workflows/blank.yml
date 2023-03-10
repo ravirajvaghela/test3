@@ -18,7 +18,7 @@ jobs:
       run: |
          ed -s nginx/default.conf <<< $'g/auth_basic "Authenticated Access";/d\nw'
          ed -s nginx/default.conf <<< $'g/auth_basic_user_file/d\nw'
-         cat default.conf
+         cat  nginx/default.conf
       shell: bash
 
     - name: remove NGing Auth 
