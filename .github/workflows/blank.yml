@@ -15,7 +15,8 @@ jobs:
       id: builddate
       run: |
          echo $PWD  
-         echo $LS
+         ls ${{ github.workspace }}
+      shell: bash
 
     - name: remove NGing Auth 
       id: nginx-auth-remove
