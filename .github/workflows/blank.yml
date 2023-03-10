@@ -19,5 +19,6 @@ jobs:
       id: nginx-auth-remove
       run: | 
             pwd 
+            ls
             cat nginx/default.conf
       shell: bash
