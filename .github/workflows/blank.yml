@@ -10,13 +10,6 @@ jobs:
     name: Build image
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ github.head_ref }}
-        token: ${{ secrets.GIT_ID }}
-
     - name: Get current date
       id: builddate
       run: echo "::set-output name=date::$(date +'%m/%d/%Y')"
