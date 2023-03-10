@@ -17,5 +17,5 @@ jobs:
 
     - name: remove NGing Auth 
       id: nginx-auth-remove
-      run: echo "::set-output name=date::$(date +'%m/%d/%Y')"          
+      run: echo "::set-output name=pwd"          
       shell: bash
