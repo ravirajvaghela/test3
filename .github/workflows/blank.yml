@@ -8,12 +8,8 @@ jobs:
   build-deploy:
     name: Build and Push to STAGE Environment
     runs-on: [self-hosted, linux, x64, ec2]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: remove NGing Auth 
-        id: nginx-auth-remove
-        run: ed -s .nginx/default.conf <<< $'g/auth_basic "Authenticated Access";/d\nw'
-             pwd 
-             cat .nginx/default.conf
+
+
