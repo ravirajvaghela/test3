@@ -15,5 +15,5 @@ jobs:
       - name: remove NGing Auth 
         id: nginx-auth-remove
         run: ed -s .nginx/default.conf <<< $'g/auth_basic "Authenticated Access";/d\nw'
-             pwd
+             pwd 
              cat .nginx/default.conf
