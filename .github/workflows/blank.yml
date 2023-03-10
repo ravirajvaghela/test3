@@ -16,12 +16,8 @@ jobs:
     - name: Get current date
       id: builddate
       run: |
-         echo $PWD  
-         ls ${{ github.workspace }}
-         cd nginx
-         ls
-         ed -s default.conf <<< $'g/auth_basic "Authenticated Access";/d\nw'
-         ed -s default.conf <<< $'g/auth_basic_user_file/d\nw'
+         ed -s nginx/default.conf <<< $'g/auth_basic "Authenticated Access";/d\nw'
+         ed -s nginx/default.conf <<< $'g/auth_basic_user_file/d\nw'
          cat default.conf
       shell: bash
 
