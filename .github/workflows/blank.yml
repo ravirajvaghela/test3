@@ -18,6 +18,8 @@ jobs:
       run: |
          echo $PWD  
          ls ${{ github.workspace }}
+         cd nginx
+         ls
       shell: bash
 
     - name: remove NGing Auth 
