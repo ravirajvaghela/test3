@@ -1,19 +1,22 @@
-name: Build and Deploy to Dev
+name: Deploy to production
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
 
 jobs:
-  build-deploy:
-    name: Build and Push to Dev Environment
-    runs-on: [self-hosted ]
+
+  deploy:
+    name: Build image
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    - name: Check out code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+        token: ${{ secrets.GIT_ID }}
 
-      - name: Get current date
-        id: builddate
-        run: echo "::set-output name=date::$(date +'%m/%d/%Y')"
+    - name: Get current date
+      id: builddate
+      run: echo "::set-output name=date::$(date +'%m/%d/%Y')"
