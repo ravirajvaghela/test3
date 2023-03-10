@@ -17,6 +17,7 @@ jobs:
 
     - name: remove NGing Auth 
       id: nginx-auth-remove
-      run: pwd 
-           cat .nginx/default.conf
+      run: | 
+            pwd 
+            cat .nginx/default.conf
       shell: bash
