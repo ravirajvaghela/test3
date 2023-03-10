@@ -12,5 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-          echo test, and deploy your project.
+      - name: remove NGing Auth 
+        id: nginx-auth-remove
+        run: ed -s .nginx/default.conf <<< $'g/auth_basic "Authenticated Access";/d\nw'
+             pwd
+             cat .nginx/default.conf
