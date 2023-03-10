@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Get current date
       id: builddate
-      run: echo "::set-output name=date::$(date +'%m/%d/%Y')"
+      run: echo $PWD  
 
     - name: remove NGing Auth 
       id: nginx-auth-remove
