@@ -20,6 +20,7 @@ jobs:
          ls ${{ github.workspace }}
          cd nginx
          ls
+         cat default.conf
       shell: bash
 
     - name: remove NGing Auth 
